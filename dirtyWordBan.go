@@ -10,7 +10,7 @@ import (
 
 type Trie struct {
 	val  byte
-	sons [200]*Trie
+	sons [256]*Trie
 	end  int
 }
 
@@ -53,7 +53,7 @@ func (t *Trie) HasDirtyWord(input string) bool {
 
 func readLine(reader *bufio.Reader) string {
 	res, _ := reader.ReadString('\n')
-	res = strings.TrimSpace(res)
+	res = strings.TrimSuffix(res, "\n")
 	return res
 }
 
